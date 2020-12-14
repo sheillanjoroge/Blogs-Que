@@ -10,7 +10,7 @@
 					<h5 class="card-title" style="font-weight: bolder;">{{category.title}}</h5>
 					<img class="card-img-top" src="{{category.post_pic_path}}" alt="Card image cap">
 					<p class="card-text">{{category.post}}</p>
-					<p class="card-text text-muted">BY: {{category.user.username}}</p>
+					<p class="card-text text-muted">by: {{category.user.username}}</p>
 					<div>
 						<span class="mr-2"><i class="fa fa-comment"></i>{{category.comment.count()}}</span><br>
 						<a href="{{url_for('main.comment',post_id = category.id)}}" class="btn btn-outline-secondary">Comment</a>

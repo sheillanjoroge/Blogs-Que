@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">My Blog</a>
+    <a class="navbar-brand" href="/">Blogs~Que</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -20,12 +20,12 @@
         
         <li class="text-center" style="color:black; font-weight: bolder;">{{current_user.username}}</li>
         <a class="btn btn-outline-primary my-2 my-sm-0" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
-        <a class="btn btn-outline-primary my-2 my-sm-0" href="{{url_for('main.add_post')}}">Create Post</a>
+        <a class="btn btn-outline-primary my-2 my-sm-0" href="{{url_for('main.add_post')}}">New Blog</a>
         <a class="btn btn-outline-primary my-2 my-sm-0" href="{{url_for('auth.logout')}}">Sign out</a>
         {% else %}
         <a class="btn btn-outline-primary my-2 my-sm-0" href="{{url_for('auth.login')}}">Sign in</a>
         <a class="btn btn-outline-primary my-2 my-sm-0" href="{{url_for('auth.register')}}">Sign up</a>
-        <a class="btn btn-outline-primary my-2 my-sm-0" href="{{url_for('main.add_post')}}">Create Post</a>
+        <a class="btn btn-outline-primary my-2 my-sm-0" href="{{url_for('main.add_post')}}">New Blog</a>
         {%endif%}
 
       </form>
