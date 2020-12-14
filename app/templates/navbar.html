@@ -19,13 +19,13 @@
 
         
         <li class="text-center" style="color:black; font-weight: bolder;">{{current_user.username}}</li>
-        <a class="btn btn-outline-success my-2 my-sm-0" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
-        <a class="btn btn-outline-success my-2 my-sm-0" href="{{url_for('main.add_post')}}">New Blog</a>
-        <a class="btn btn-outline-success my-2 my-sm-0" href="{{url_for('auth.logout')}}">Sign out</a>
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{{url_for('main.add_post')}}">New Blog</a>
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{{url_for('auth.logout')}}">Sign out</a>
         {% else %}
-        <a class="btn btn-outline-success my-2 my-sm-0" href="{{url_for('auth.login')}}">Sign in</a>
-        <a class="btn btn-outline-success my-2 my-sm-0" href="{{url_for('auth.register')}}">Sign up</a>
-        <a class="btn btn-outline-success my-2 my-sm-0" href="{{url_for('main.add_post')}}">New Blog</a>
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{{url_for('auth.login')}}">Sign in</a>
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{{url_for('auth.register')}}">Sign up</a>
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{{url_for('main.add_post')}}">New Blog</a>
         {%endif%}
 
       </form>
