@@ -1,0 +1,88 @@
+
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+
+
+<div class="container-fluid"
+    style="background-image:url(https://res.cloudinary.com/zilfa/image/upload/v1607280594/jonas-denil-SITopP_6xAo-unsplash_putsws.jpg);background-size: cover; height: 110.4vh; background-position: center;margin-top: -0.55cm;">
+    <div class="row">
+        <div class="col-md-2"> </div>
+        <div class="col-md-8" style="color: white;">
+            <h3 class="text-center m-5"
+                style="font-weight: bold;font-size: 50px;margin-top: 80px;letter-spacing:2px;font-family: 'Times New Roman', Times, serif;">
+                Update A Post</h3>
+            <br>
+            <div>
+                <form method="POST" action="" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">{{ legend }}</legend>
+                        <div class="form-group">
+                            {{ form.title.label(class="form-control-label") }}
+                            {% if form.title.errors %}
+                                {{ form.title(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.title.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.title(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.post.label(class="form-control-label") }}
+                            {% if form.post.errors %}
+                                {{ form.post(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.post.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.post(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+            
+                        <div class="form-group">
+                            {{ form.category.label(class="form-control-label") }}
+                            {% if form.category.errors %}
+                                {{ form.category(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.category.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.category(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.post_pic_path.label(class="form-control-label") }}
+                            {% if form.post_pic_path.errors %}
+                                {{ form.post_pic_path(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.post_pic_path.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.post_pic_path(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>   
+    
+            
+                        
+                    </fieldset>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
