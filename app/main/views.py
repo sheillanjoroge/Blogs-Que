@@ -12,12 +12,12 @@ from flask_login import current_user
 @main.route('/')
 def index():
     post = Post.query.order_by(Post.time.desc()).all()
-    hobbies = Post.query.filter_by(category = 'Hobbies').order_by(Post.time.desc()).all() 
+    hobbies = Post.query.filter_by(category = 'Unthinkables').order_by(Post.time.desc()).all() 
     experiences = Post.query.filter_by(category = 'Experiences').order_by(Post.time.desc()).all()
-    skills = Post.query.filter_by(category = 'Skills').order_by(Post.time.desc()).all()
+    skills = Post.query.filter_by(category = 'Mental-Health').order_by(Post.time.desc()).all()
     quotes = get_quotes()
-    title ='Blog'
-    return render_template('index.html', hobbies = hobbies, experiences = experiences, post = post, skills= skills, title=title,quotes = quotes)
+    title ='Blog-Que'
+    return render_template('index.html', unthinkables = unthinkables, experiences = experiences, post = post, mentalhealth= mentalhealth, title=title,quotes = quotes)
 
 @main.route('/user/<uname>')
 def profile(uname):
@@ -84,7 +84,7 @@ def add_post():
         
             return redirect(url_for('main.index'))
         else:
-            post_pic_path = 'https://wallpaperaccess.com/full/2433830.jpg'    
+            post_pic_path = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-aDK-twNUiSDNjj-u1px-p0nFSYYRO5aqTg&usqp=CAU'    
             if form.validate_on_submit():
 
                 new_post = Post(post=post,user_id=current_user._get_current_object().id,post_pic_path=post_pic_path,category=category,title=title)
