@@ -11,7 +11,7 @@ class UpdateProfile(FlaskForm):
 
 class PostForm(FlaskForm):
     title = StringField('Title', validators=[Required()])
-    category = SelectField('Category', choices=[('Hobbies','Hobbies'),('Experiences','Experiences'),('Skills','Skills')],validators=[Required()])
+    category = SelectField('Category', choices=[('MentalHealth','MentalHealth'),('Experiences','Experiences'),('Unthinkables','Unthinkables')],validators=[Required()])
     post = TextAreaField('Your Post...', validators=[Required()])
     post_pic_path = StringField('Upload image url...')
     submit = SubmitField('Save')
@@ -22,7 +22,7 @@ class CommentForm(FlaskForm):
 
 class UpdatePostForm(FlaskForm):   
     title = StringField('Title', validators=[Required()])
-    category = SelectField('Category', choices=[('Hobbies','Hobbies'),('Experiences','Experiences'),('Skills','Skills')],validators=[Required()])
+    category = SelectField('Category', choices=[('MentalHealth','MentalHealth'),('Experiences','Experiences'),('Unthinkables','Unthinkables')],validators=[Required()])
     post = TextAreaField('Your post...', validators=[Required()])
     post_pic_path = StringField('Upload image url...')
     submit = SubmitField('Save')

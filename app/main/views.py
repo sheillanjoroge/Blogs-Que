@@ -12,9 +12,9 @@ from flask_login import current_user
 @main.route('/')
 def index():
     post = Post.query.order_by(Post.time.desc()).all()
-    hobbies = Post.query.filter_by(category = 'Hobbies').order_by(Post.time.desc()).all() 
-    experiences = Post.query.filter_by(category = 'Experiences').order_by(Post.time.desc()).all()
-    skills = Post.query.filter_by(category = 'Skills').order_by(Post.time.desc()).all()
+    hobbies = Post.query.filter_by(category = 'MentalHealth').order_by(Post.time.desc()).all() 
+    experiences = Post.query.filter_by(category = 'Unthinkables').order_by(Post.time.desc()).all()
+    skills = Post.query.filter_by(category = 'Experiences').order_by(Post.time.desc()).all()
     quotes = get_quotes()
     title ='Blog'
     return render_template('index.html', hobbies = hobbies, experiences = experiences, post = post, skills= skills, title=title,quotes = quotes)
