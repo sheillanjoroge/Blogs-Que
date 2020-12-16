@@ -17,7 +17,7 @@ def index():
     skills = Post.query.filter_by(category = 'Experiences').order_by(Post.time.desc()).all()
     quotes = get_quotes()
     title ='Blog'
-    return render_template('index.html', hobbies = hobbies, experiences = experiences, post = post, skills= skills, title=title,quotes = quotes)
+    return render_template('index.html', mentalhealth = mentalhealth, experiences = experiences, post = post, unthinkables= unthinkables, title=title,quotes = quotes)
 
 @main.route('/user/<uname>')
 def profile(uname):
@@ -84,7 +84,7 @@ def add_post():
         
             return redirect(url_for('main.index'))
         else:
-            post_pic_path = './images/bg.jpeg'    
+            post_pic_path = './photos/bg.jpeg'    
             if form.validate_on_submit():
 
                 new_post = Post(post=post,user_id=current_user._get_current_object().id,post_pic_path=post_pic_path,category=category,title=title)
